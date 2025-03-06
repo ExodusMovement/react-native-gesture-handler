@@ -11,9 +11,8 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "esnext",
-    "declaration": true,
+    "declaration": false,
     "declarationMap": false,
-    "outDir": "lib/typescript",
 
     "noStrictGenericChecks": false,
     "forceConsistentCasingInFileNames": true,
