@@ -23,6 +23,7 @@
   "module": "lib/module/index.js",
   "files": [
     "lib",
+    "!lib/commonjs",
     "!**/*.js.map",
     "!**/__tests__",
     "!**/__fixtures__",
