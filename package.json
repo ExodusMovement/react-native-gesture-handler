@@ -23,6 +23,8 @@
   "module": "lib/module/index.js",
   "files": [
     "lib",
+    "!lib/**/web",
+    "!lib/**/web_hammer",
     "!lib/commonjs",
     "!**/*.js.map",
     "!**/__tests__",
