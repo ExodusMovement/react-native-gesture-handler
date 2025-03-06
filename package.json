@@ -1,6 +1,6 @@
 {
   "name": "@exodus/react-native-gesture-handler",
-  "version": "2.24.0-rc.2",
+  "version": "2.24.0-rc.3",
   "description": "Declarative API exposing native platform touch and gesture system to React Native",
   "scripts": {
     "prepare": "bob build",
