@@ -18,7 +18,7 @@
     "architectures-consistency-check": "node ./scripts/codegen-check-consistency.js",
     "sync-architectures": "node ./scripts/codegen-sync-archs.js"
   },
-  "react-native": "src/index.ts",
+  "react-native": "lib/module/index.js",
   "main": "lib/module/index.js",
   "module": "lib/module/index.js",
   "files": [
