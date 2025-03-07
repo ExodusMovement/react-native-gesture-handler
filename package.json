@@ -3,8 +3,9 @@
   "version": "2.24.0-rc.5",
   "description": "Declarative API exposing native platform touch and gesture system to React Native",
   "scripts": {
-    "prepare": "bob build",
+    "prepare": "yarn build",
     "test": "jest",
+    "prebuild": "rm -rf src/**/*.js src/**/*.d.ts",
     "build": "yarn tsc -p tsconfig.build.json",
     "precommit": "lint-staged",
     "ts-check": "yarn tsc --noEmit",
@@ -18,15 +19,19 @@
     "architectures-consistency-check": "node ./scripts/codegen-check-consistency.js",
     "sync-architectures": "node ./scripts/codegen-sync-archs.js"
   },
-  "react-native": "lib/module/index.js",
-  "main": "lib/module/index.js",
-  "module": "lib/module/index.js",
+  "react-native": "src/index.js",
+  "main": "src/index.js",
+  "module": "src/index.js",
+  "types": "src/index.d.ts",
   "files": [
-    "lib",
-    "!lib/**/web",
-    "!lib/**/web_hammer",
+    "src",
+    "src/**/*.d.ts",
+    "!src/**/*.ts*",
+    "!src/**/*.d.js",
+    "!src/**/web",
+    "!src/**/web_hammer",
     "!*.web.*",
-    "!lib/commonjs",
+    "!src/commonjs",
     "!**/*.js.map",
     "!**/__tests__",
     "!**/__fixtures__",
@@ -99,7 +104,6 @@
     "prettier": "3.3.3",
     "react": "19.0.0",
     "react-native": "0.78.0",
-    "react-native-builder-bob": "^0.17.1",
     "react-native-reanimated": "^3.12.0",
     "react-test-renderer": "19.0.0",
     "release-it": "^13.6.5",
@@ -121,13 +125,6 @@
         "# check if version corresponds to changes in native files  \n if git diff --name-only ${latestVersion} HEAD | egrep \"(android/.*)|(ios/.*)\" -q; then egrep '\\.0$' -q <<< ${version}; else test $? -eq 1; fi"
       ]
     }
-  },
-  "react-native-builder-bob": {
-    "source": "src",
-    "output": "lib",
-    "targets": [
-      "module"
-    ]
   },
   "eslintIgnore": [
     "node_modules/",
