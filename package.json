@@ -24,9 +24,8 @@
   "module": "src/index.js",
   "types": "src/index.d.ts",
   "files": [
-    "src",
+    "src/**/*.js",
     "src/**/*.d.ts",
-    "!src/**/*.ts*",
     "!src/**/*.d.js",
     "!src/**/web",
     "!src/**/web_hammer",
