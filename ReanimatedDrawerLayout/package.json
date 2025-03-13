@@ -1,6 +1,6 @@
 {
-  "main": "../lib/commonjs/components/ReanimatedDrawerLayout",
-  "module": "../lib/module/components/ReanimatedDrawerLayout",
+  "main": "../src/components/ReanimatedDrawerLayout",
+  "module": "../src/components/ReanimatedDrawerLayout",
   "react-native": "../src/components/ReanimatedDrawerLayout",
-  "types": "../lib/typescript/components/ReanimatedDrawerLayout.d.ts"
+  "types": "../src/components/ReanimatedDrawerLayout.d.ts"
 }
