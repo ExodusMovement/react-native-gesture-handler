@@ -10,14 +10,11 @@
     "precommit": "lint-staged",
     "ts-check": "yarn tsc --noEmit",
     "format:js": "prettier --write --list-different './{src,example,FabricExample,MacOSExample}/**/*.{js,jsx,ts,tsx}'",
-    "format:android": "node ./scripts/format-android.js",
     "format:apple": "find apple/ -iname *.h -o -iname *.m -o -iname *.cpp -o -iname *.mm | xargs clang-format -i",
     "lint:js": "eslint --ext '.js,.ts,.tsx' src/ example/src FabricExample/src MacOSExample/src && yarn prettier --check './{src,example,FabricExample,MacOSExample}/**/*.{js,jsx,ts,tsx}'",
     "lint:js-root": "eslint --ext '.js,.ts,.tsx' src/ && yarn prettier --check './src/**/*.{js,jsx,ts,tsx}'",
     "lint:android": "./android/gradlew -p android spotlessCheck -q",
-    "circular-dependency-check": "yarn madge --extensions js,ts,tsx --circular src",
-    "architectures-consistency-check": "node ./scripts/codegen-check-consistency.js",
-    "sync-architectures": "node ./scripts/codegen-sync-archs.js"
+    "circular-dependency-check": "yarn madge --extensions js,ts,tsx --circular src"
   },
   "react-native": "src/index.js",
   "main": "src/index.js",
@@ -61,9 +58,7 @@
     "type": "git",
     "url": "git+https://github.com/ExodusMovement/react-native-gesture-handler.git"
   },
-  "author": {
-    "email": "Exodus Movement, Inc."
-  },
+  "author": "Exodus Movement, Inc.",
   "license": "MIT",
   "readmeFilename": "README.md",
   "bugs": {
@@ -105,7 +100,6 @@
     "react-native": "0.78.0",
     "react-native-reanimated": "^3.12.0",
     "react-test-renderer": "19.0.0",
-    "release-it": "^13.6.5",
     "typescript": "5.0.4"
   },
   "peerDependencies": {
@@ -115,15 +109,7 @@
   "lint-staged": {
     "./{src,example,FabricExample,MacOSExample}/**/*.{ts,tsx}": "yarn format:js",
     "android/**/*.kt": "yarn format:android",
-    "apple/**/*.{h,m,mm,cpp}": "yarn format:apple",
-    "src/specs/*.ts": "yarn sync-architectures"
-  },
-  "release-it": {
-    "hooks": {
-      "before:git:bump": [
-        "# check if version corresponds to changes in native files  \n if git diff --name-only ${latestVersion} HEAD | egrep \"(android/.*)|(ios/.*)\" -q; then egrep '\\.0$' -q <<< ${version}; else test $? -eq 1; fi"
-      ]
-    }
+    "apple/**/*.{h,m,mm,cpp}": "yarn format:apple"
   },
   "eslintIgnore": [
     "node_modules/",

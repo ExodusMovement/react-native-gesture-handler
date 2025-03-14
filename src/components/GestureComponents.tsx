@@ -96,8 +96,8 @@ export const FlatList = React.forwardRef((props, ref) => {
 
   const { waitFor, refreshControl, ...rest } = props;
 
-  const flatListProps = {};
-  const scrollViewProps = {};
+  const flatListProps = Object.create(null);
+  const scrollViewProps = Object.create(null);
   for (const [propName, value] of Object.entries(rest)) {
     // https://github.com/microsoft/TypeScript/issues/26255
     if ((nativeViewProps as readonly string[]).includes(propName)) {

@@ -2,7 +2,7 @@ import { isTestEnv } from '../utils';
 import { GestureType } from './gestures/gesture';
 import { GestureEvent, HandlerStateChangeEvent } from './gestureHandlerCommon';
 
-export const handlerIDToTag: Record<string, number> = {};
+export const handlerIDToTag: Record<string, number> = Object.create(null);
 const gestures = new Map<number, GestureType>();
 const oldHandlers = new Map<number, GestureHandlerCallbacks>();
 const testIDs = new Map<string, number>();
