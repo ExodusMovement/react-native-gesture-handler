@@ -22,7 +22,7 @@
   "types": "src/index.d.ts",
   "files": [
     "src/**/*.js",
-    "src/**/*.ts",
+    "src/specs/**/*.ts",
     "src/**/*.d.ts",
     "!src/**/*.d.js",
     "!src/**/web",
