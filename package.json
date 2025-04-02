@@ -24,6 +24,7 @@
     "src/**/*.js",
     "src/specs/**/*.ts",
     "src/**/*.d.ts",
+    "!src/specs/**/*.js",
     "!src/**/*.d.js",
     "!src/**/web",
     "!src/**/web_hammer",
