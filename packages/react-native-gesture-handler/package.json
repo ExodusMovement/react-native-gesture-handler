@@ -8,17 +8,11 @@
     "ts-check": "yarn tsc --noEmit",
     "format-js": "prettier --write --list-different './src/**/*.{js,jsx,ts,tsx}'",
     "format:js": "yarn format-js",
-    "format:android": "node ../../scripts/format-android.js",
-    "format:apple": "node ../../scripts/format-apple.js",
     "lint-js": "eslint --ext '.js,.ts,.tsx' src/ && yarn prettier --check './src/**/*.{js,jsx,ts,tsx}'",
     "lint:js": "yarn lint-js",
     "lint:android": "./android/gradlew -p android spotlessCheck -q",
     "circular-dependency-check": "yarn madge --extensions js,ts,tsx --circular src",
-    "architectures-consistency-check": "node ../../scripts/codegen-check-consistency.js",
-    "sync-architectures": "node ../../scripts/codegen-sync-archs.js",
-    "clean": "rm -rf node_modules android/build android/.cxx",
-    "prepack": "cp ../../README.md ./README.md",
-    "postpack": "rm ./README.md"
+    "clean": "rm -rf node_modules android/build android/.cxx"
   },
   "react-native": "src/index.ts",
   "main": "lib/commonjs/index.js",
