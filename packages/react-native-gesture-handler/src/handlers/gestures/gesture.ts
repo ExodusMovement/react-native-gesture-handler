@@ -130,7 +130,7 @@ export abstract class BaseGesture<
   private gestureId = -1;
   public handlerTag = -1;
   public handlerName = '';
-  public config: BaseGestureConfig = {};
+  public config: BaseGestureConfig = Object.create(null);
   public handlers: HandlerCallbacks<EventPayloadT> = {
     gestureId: -1,
     handlerTag: -1,
